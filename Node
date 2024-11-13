@@ -1,1 +1,26 @@
-Get-ExecutionPolicy -List
+1. Get-ExecutionPolicy -List
+Out put :-
+PS C:\> Get-ExecutionPolicy -List
+
+        Scope ExecutionPolicy
+        ----- ---------------
+MachinePolicy       Undefined
+   UserPolicy       Undefined
+      Process    Unrestricted
+  CurrentUser       Undefined
+ LocalMachine      Restricted
+
+2. In the above command, the scope is set to ‘Process’. This means that the new execution policy is only valid in the current process. The old restrictions still apply outside of this specific PowerShell session.
+
+Alternatively, if you want to be able to run scripts freely on your system going forward, use the following command:
+
+Command : Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+
+3. In the above command, the scope is set to ‘Process’. This means that the new execution policy is only valid in the current process. The old restrictions still apply outside of this specific PowerShell session.
+
+Alternatively, if you want to be able to run scripts freely on your system going forward, use the following command:
+
+Command : Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process
+
+
+
